@@ -1,0 +1,1334 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="hexo博客添加一级分类相册功能, 星空无限 前端 技术笔记 个人随笔">
+    <meta name="description" content="最近在折腾自己的博客，在折腾的过程中也参观了许多大牛的博客，发现不少博主都有个相册页面，我也想在自己的博客上面加个相册功能。但是我现在用的这个主题呢，虽然有个相册的功能，但是我感觉有点简陋，点击照片是个弹出的轮播图，照片多了的话还要一张一张">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>hexo博客添加一级分类相册功能 | 星空无限</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <!--<link rel="stylesheet" type="text/css" href="/css/matery.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/css/my.css">-->
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/2.2.0/jquery.min.js"></script>
+    <script src></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="javascript:;" class="site-title waves-effect waves-light">
+                    
+                    <img src="/medias/star.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">星空无限</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="nav-link waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="nav-link waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="nav-link waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="nav-link waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="nav-link waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="nav-link waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger nav-link waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/star.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">星空无限</div>
+        <div class="logo-desc">
+            
+            I will keep coding , keep riding
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://images.liyangzone.com/medias/featureimages/12764918073_21b21449be_k.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        hexo博客添加一级分类相册功能
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/hexo/" target="_blank">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="/tags/添加相册/" target="_blank">
+                                <span class="chip bg-color">添加相册</span>
+                            </a>
+                        
+                            <a href="/tags/分类相册/" target="_blank">
+                                <span class="chip bg-color">分类相册</span>
+                            </a>
+                        
+                            <a href="/tags/教程/" target="_blank">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/技术教程/" class="post-category" target="_blank">
+                                技术教程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-07-22
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        14 分
+                    </div>
+                    
+                
+				
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>最近在折腾自己的博客，在折腾的过程中也参观了许多大牛的博客，发现不少博主都有个相册页面，我也想在自己的博客上面加个相册功能。但是我现在用的这个主题呢，虽然有个相册的功能，但是我感觉有点简陋，点击照片是个弹出的轮播图，照片多了的话还要一张一张的翻。如下图：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-01.jpg" alt></p>
+<a id="more"></a>
+
+<p>后来在网上找了不少教程，可是实现的结果大部分都是这种：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/%E4%B8%8D%E5%B8%A6%E5%88%86%E7%B1%BB%E7%9A%84%E7%9B%B8%E5%86%8C.jpg" alt></p>
+<p>虽然有了分类的功能，但是所有照片都是在一个页面上，图片多了会影响页面加载速度，页面也会变得很长，移动端会浪费大量流量，用户体验不是很好。</p>
+<p>该博客地址：<a href="http://lawlite.me/photos/" target="_blank" rel="noopener">http://lawlite.me/photos</a></p>
+<p>而我想要的呢，是个类似<code>QQ空间</code>的相册，要有个相册目录界面，然后可以从目录页跳转至相册列表界面。 然后我翻遍了整个互联网终于找到了一个有相册分类功能的博客，该博客的相册界面是这样的：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/%E5%88%86%E7%B1%BB%E7%9B%B8%E5%86%8C1.jpg" alt><br><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190722-153547.jpg" alt></p>
+<p>该博客地址：<a href="http://www.rayblog.cn/album/" target="_blank" rel="noopener">http://www.rayblog.cn/album</a></p>
+<p>好吧，这就是我想要的效果，而且博客下面还有教程，我研究了半天，把代码都拷到本机运行了之后，发现他这个教程也只是实现了相册的列表界面，至于目录界面是怎么弄出来的只是一笔带过。并没有实现的细节。我个人猜测他的目录界面是一个<code>album/index.md</code>文件，然后md文件里手动写的HTML代码。 </p>
+<p>虽然这种方式我也能实现，但我并不想这么做，因为我感觉在markdown文件里面写HTML和js不是很优雅，也有些繁琐，假如要添加一个相册的话还要手动修改里面的HTML代码，添加对应的链接。</p>
+<p>后来我仔细研究了这个主题的源码，发现这个主题的<code>友情链接</code>界面实现的方式是这样的，读取<code>sources/_data/friends.json</code>文件,该文件内容如下：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"http://image.luokangyuan.com/1_qq_27922023.jpg"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"码酱"</span><span class="token punctuation">,</span>
+  <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"我不是大佬，只是在追寻大佬的脚步"</span><span class="token punctuation">,</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"http://luokangyuan.com/"</span><span class="token punctuation">,</span>
+  <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去学习"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"http://image.luokangyuan.com/4027734.jpeg"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"闪烁之狐"</span><span class="token punctuation">,</span>
+  <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬"</span><span class="token punctuation">,</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://blinkfox.github.io/"</span><span class="token punctuation">,</span>
+  <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去学习"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"http://image.luokangyuan.com/avatar.jpg"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ja_rome"</span><span class="token punctuation">,</span>
+  <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"平凡的脚步也可以走出伟大的行程"</span><span class="token punctuation">,</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"ttps://me.csdn.net/jlh912008548"</span><span class="token punctuation">,</span>
+  <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去学习"</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>该文件包含每个友链的头像、名字、介绍、地址、标题信息，然后hexo会按照friends.ejs模板文件里的结构渲染出来列表，实现的效果就是这样的:<br><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-02.jpg" alt></p>
+<p>就是三个a标签，里面包含头像、地址等信息，点击后跳到对应的地址。</p>
+<p>那么我们也能自定义一个相册的配置文件和模板文件，然后hexo读取这个配置文件，自动生成目录界面和列表界面，这样的话，只需要修改这个配置文件就能完成对相册的各种操作（增删改）。</p>
+<p>好吧，有了思路，就已经成功一半了，至于代码实现呢，就只是时间问题了。花了一个周末的时间我终于把它实现了。下面是具体实现过程:</p>
+<h4 id="1、添加【相册】菜单"><a href="#1、添加【相册】菜单" class="headerlink" title="1、添加【相册】菜单"></a>1、添加【相册】菜单</h4><p>这里要修改几个文件：</p>
+<p>该主题的配置文件<code>_config.yml</code> ，不要跟站点根目录下的同名文件搞混了，在<code>menu</code>下添加以下代码:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">Galleries</span><span class="token punctuation">:</span>
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> /galleries
+    <span class="token key atrule">icon</span><span class="token punctuation">:</span> fa<span class="token punctuation">-</span>photo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>该主题的语言配置文件目录 <code>languages</code>下的 <code>default.yml</code>和<code>zh-CN.yml</code>，分别是英文和中文的配置文件，分别添加以下内容，</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">galleries</span><span class="token punctuation">:</span> galleries
+
+<span class="token key atrule">galleries</span><span class="token punctuation">:</span> 相册<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>该主题目录下<code>layout/_partial/navigation.ejs</code>和<code>layout/_partial/mobile-nav.ejs</code>文件里添加</p>
+<pre class="line-numbers language-js"><code class="language-js">    menuMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">"Galleries"</span><span class="token punctuation">,</span> <span class="token string">"相册"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>至于添加到什么位置，你打开文件就知道了，里面会有类似格式的代码，很容易找到的。</p>
+<p>做完以上操作后，你就会发现<code>相册</code>的菜单已经出现了：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-03.jpg" alt></p>
+<p>点击就能跳转到<code>galleries</code>下，然而浏览器会提示你：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-04.jpg" alt></p>
+<p>因为站点下并没有<code>galleries/index.html</code>这个文件，如何生成这个文件呢?<br>在站点根目录<code>source</code>下新建<code>galleries</code>目录，然后在该目录下新建<code>index.md</code>，就会生成<code>index.html</code>文件了，然而却是这个效果：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-05.jpg" alt></p>
+<h4 id="2、生成相册目录和相册列表"><a href="#2、生成相册目录和相册列表" class="headerlink" title="2、生成相册目录和相册列表"></a>2、生成相册目录和相册列表</h4><p>这是为什么呢？因为hexo把这个文件当成一个普通的文章来渲染了，而我们需要自定义样式，不能让它渲染成普通的文章。要让它渲染成一个<code>layout</code>,也就是我们自定义的模板。需要以下操作：<br>在<code>index.md</code>文件里添加以下内容，注意，那几个中划线也不要少了。</p>
+<pre>
+---
+title: 相册
+layout: "galleries"
+---
+</pre>
+
+<p>首先添加自定义CSS样式文件，该<code>主题</code>目录下的<code>source/css</code>里新建<code>gallery.css</code>文件，复制以下css样式进去：</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.gallery-wrapper</span></span><span class="token punctuation">{</span>
+  <span class="token property">padding-top</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.gallery-wrapper</span> <span class="token class">.gallery-box</span></span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">5</span>px <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.gallery-wrapper</span> <span class="token class">.gallery-item</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">5</span>px<span class="token punctuation">;</span>
+  <span class="token property">padding-bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">-moz-box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">3</span>px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">3</span>px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">3</span>px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.gallery-cover-box</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">padding-top</span><span class="token punctuation">:</span> <span class="token number">60%</span><span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> center center no-repeat<span class="token punctuation">;</span>
+  <span class="token property">-webkit-background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.gallery-cover-box</span> <span class="token class">.gallery-cover-img</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>,-<span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.gallery-item</span> <span class="token class">.gallery-name</span></span><span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">14</span>px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">24</span>px<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#666</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.waterfall</span> </span><span class="token punctuation">{</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
+  <span class="token property">column-gap</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.photo-wrapper</span></span><span class="token punctuation">{</span>
+  <span class="token property">padding-top</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.photo-item</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+  <span class="token property">padding-bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">14</span>px<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">-moz-page-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+  <span class="token property">-webkit-column-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+  <span class="token property">break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">-moz-box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">3</span>px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">3</span>px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>px <span class="token number">3</span>px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.photo-item</span> img </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.photo-item</span> <span class="token class">.photo-name</span></span><span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">14</span>px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#dddddd</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/*适配移动端布局*/</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 601px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector"><span class="token class">.waterfall</span> </span><span class="token punctuation">{</span>
+    <span class="token property">column-count</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token property">column-gap</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在该主题<code>layout</code>目录下新建<code>galleries.ejs</code>文件，添加以下代码：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/css/gallery.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+&lt;%- partial('_partial/bg-cover') %>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">if</span> <span class="token attr-name">(site.data</span> <span class="token attr-name">&amp;&amp;</span> <span class="token attr-name">site.data.galleries)</span> <span class="token attr-name">{</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+        &lt;% var galleries = site.data.galleries; %>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gallery-wrapper row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            &lt;% for (var i = 0, len = galleries.length; i &lt; len; i++) { %>
+            &lt;% var gallery = galleries[i]; %>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s6 m4 l4 xl3 gallery-box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./&lt;%- gallery.name %<span class="token punctuation">></span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gallery-item<span class="token punctuation">"</span></span> <span class="token attr-name">data-aos</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zoom-in-up<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gallery-cover-box<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url">url(http://图片地址.com/&lt;%- gallery.cover%>)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gallery-name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%-</span> <span class="token attr-name">gallery.name</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">}</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">}</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>同目录下新建<code>gallery.ejs</code>，添加以下代码：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/css/gallery.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/libs/fancybox/jquery.fancybox.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/libs/justifiedGallery/justifiedGallery.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+&lt;%- partial('_partial/post-cover') %>
+&lt;%
+let galleries = [];
+if (site.data &amp;&amp; site.data.galleries) {
+    galleries = site.data.galleries;
+}
+var pageTitle = page.title;
+function getCurrentGallery(galleries, pageTitle) {
+    for (let i = 0; i &lt; galleries.length; i++) {
+        if (galleries[i]['name'] == pageTitle) {
+            return galleries[i];
+        }
+    }
+}
+var currentGallery = getCurrentGallery(galleries, pageTitle)
+
+var photos = currentGallery.photos;
+
+let imageStr = ''
+
+for (var i = 0, len = photos.length; i &lt; len; i++) {
+    var photo = photos[i];
+
+    imageStr += "&lt;a href=\"http://图片地址.com/" + photo + "\"" +
+            "     class=\"photo-item\" rel=\"example_group\"" +
+            "     data-fancybox=\"images\">" +
+            "      &lt;img src=\"http://图片地址.com/" + photo + "\"" +
+            "       alt=" + photo + ">\n" +
+            "    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>"
+
+}
+%>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>photo-wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>waterfall<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mygallery<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%-</span> <span class="token attr-name">imageStr</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/libs/fancybox/fancybox.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/libs/justifiedGallery/justifiedGallery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"a[rel=example_group]"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fancybox</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#mygallery"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">justifiedGallery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>margins<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> rowHeight<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上代码实现的功能呢，就是读取相册配置文件并把相册目录和相册列表都渲染成HTML，用<code>&lt;% %&gt;</code>包起来的代码是<code>ejs</code>语法，调试的话是在本地控制台输出的而不是浏览器，就是你输入<code>hexo s</code>的地方，我这里用的是WebStorm自带的终端，看下图：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-06.jpg" alt></p>
+<p>另外上面代码里引用了两个<code>jquery插件</code>，分别是<code>fancybox</code>和<code>justifiedGallery</code>, 一个是点击弹出的轮播插件，一个是自动调整图片布局的插件，需要自行下载并放到相应目录，当然，你也可以用浏览器调试工具直接在我的博客上下载，在sources里找到对应的文件，另存为就行。</p>
+<h4 id="3、制作相册配置文件"><a href="#3、制作相册配置文件" class="headerlink" title="3、制作相册配置文件"></a>3、制作相册配置文件</h4><p>在<code>站点</code>目录<code>sources/_data/</code>下新建一个<code>galleries.json</code>的文件，模板如下：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"2017"</span><span class="token punctuation">,</span>
+    <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"2017/IMG_20171109_124516.jpg"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"2017年记录"</span><span class="token punctuation">,</span>
+    <span class="token property">"photos"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"2017/IMG_20170924_110224.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2017/IMG_20170924_113412.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2017/IMG_20171109_124516.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2017/IMG_20171125_125304.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2017/IMG_20171126_181605.jpg"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"2018"</span><span class="token punctuation">,</span>
+    <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"2018/IMG_20181124_125818.jpg"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"2018年记录"</span><span class="token punctuation">,</span>
+    <span class="token property">"photos"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"2018/IMG_20180204_113055.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2018/IMG_20180204_113302.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2018/IMG_20180204_113442.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2018/IMG_20180208_083336.jpg"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"2019"</span><span class="token punctuation">,</span>
+    <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"2019/IMG_20190331_165713_1.jpg"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"2019年记录"</span><span class="token punctuation">,</span>
+    <span class="token property">"photos"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"2019/IMG_20190118_200104.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2019/IMG_20190118_200120.jpg"</span><span class="token punctuation">,</span>
+      <span class="token string">"2019/IMG_20190118_200456.jpg"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>就是一个包含多个相册的列表JSON，每个相册有以下字段，<code>name</code>是相册标题，<code>cover</code>是封面图片，从相册里随便选一个就行，<code>description</code>是相册介绍，<code>photos</code>是图片列表。图片较少的话手动复制进去就行，如果你图片较多的话推荐使用脚本之类的东西自动生成，我是使用了上面博客里的js文件生成的。我这里使用了七牛对象存储做为图床，需要在代码里加上七牛的地址才能正常显示。</p>
+<p>配置文件建好了之后还没完，只剩最后一个步骤了，在<code>galleries</code>下建立对应的相册名称目录和文件，比如我这三个相册需要建 2017 2018 2019三个目录，然后下面再分别新建<code>index.md</code>文件，文件内容为:</p>
+<pre>
+---
+title: 2017
+layout: "gallery"
+---
+</pre>
+
+<p>建好相应目录和文件之后，如果你的图片路径也没有错的话，相册目录和列表就都会渲染出来了，如下所示：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-07.jpg" alt></p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190722_161044.jpg" alt></p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190722_160930.jpg" alt></p>
+<h4 id="4、照片列表的布局选择"><a href="#4、照片列表的布局选择" class="headerlink" title="4、照片列表的布局选择"></a>4、照片列表的布局选择</h4><p>上面的博客用的布局都比较简单粗暴，都是固定的大小和宽高比。但是不同的图片有不同的宽高比，用这种模式的话图片有两种显示方式，一是强制缩放到固定的宽高，二是裁切只显示一部分，但是都有缺点，第一个会图片会变形，第二个图片显示不全。那么有没有两全齐美的办法呢？答案是肯定的。首先我选用的是瀑布流布局，用CCS3的新特性实现的，这种模式的特点是等宽布局，固定列数，图片高度自适应，如下图：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190115114259.jpg" alt></p>
+<p>看起来似乎没什么问题，高端大气上档次，然而做好了我发现图片的排列顺序是这个样子的，是按列竖向排列的，不太符合阅读习惯，PASS。</p>
+<p>另外一种布局呢是等高布局，如图；<br><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190723_110706.jpg" alt></p>
+<p>这种布局是等高布局，图片高度一致，宽度自适应，图片托管网站flickr就是用的这种模式，但是用CSS方法是实现不了的，因为每一行最后张图片不一定能正好撑满这一行，需要用js动态设置图片的宽高来实现，上面引用的<code>justifiedGallery</code>插件就是来完成这个的。<br>下面代码的功能就是初始化这个插件，间距是5px，每一行的高度是150px。</p>
+<pre class="line-numbers language-js"><code class="language-js">  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#mygallery"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">justifiedGallery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>margins<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> rowHeight<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这两种布局呢，上面的代码里都是包含了的。是可以手动切换的。只需要把上面那句代码注释掉就会切换到瀑布流布局，效果如下图：<br><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190723_134939.jpg" alt></p>
+<p>当然，你要是对我写的样式不满意的话也可以自己修改代码，边框和文件名都是可以去掉的。</p>
+<h4 id="5、图床相关事项"><a href="#5、图床相关事项" class="headerlink" title="5、图床相关事项"></a>5、图床相关事项</h4><p>2019-08-28更新:</p>
+<p>最初我是采用的七牛对象存储当为图床，但是我发现一个问题，在相册列表界面下，相册图片较多或图片体积很大的情况下加载速度会很慢，也会浪费大量的流量。七牛CDN免费流量只有10G，然而我还作死的把几个图片的链接地址放到了某论坛上，图片也没有做任何处理，一个图片为几MB大小，在我放出外链几个小时之后，CDN流量就爆了，超出了约60G：</p>
+<p><img src="https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/20190828_223502.jpg" alt></p>
+<p>为了防止以后再发生这样的事，减少CDN流量消耗，我想到了如下两种方案：</p>
+<p>一是手动生成图片的缩略图到另外一个新目录，保持与原相册目录结构一致。比如我一个图片路径为 /gallery/2017/XXX.jpg,缩略图结构应为/gallery-tiny/2017/XXX.jpg。</p>
+<p>在相册列表界面应使用缩略图而不是使用原图。上面代码中 <code>a标签</code>里的地址是大图地址，点击才会加载，<code>img</code>标签里的地址是缩略图地址。</p>
+<p>缩略图大小我调整为600px宽度，这样每个图片体积可减少到100KB以下。这样一个100张图片的相册，缩略图也不超过10MB。缩略图我使用 <code>Light Image Resizer</code> 软件批量生成。</p>
+<p>上面对应的代码需要改为:</p>
+<pre class="line-numbers language-js"><code class="language-js">
+ imageStr <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"&lt;a href=\"http://imgs.liyangzone.com/"</span> <span class="token operator">+</span> photo <span class="token operator">+</span> <span class="token string">"\""</span> <span class="token operator">+</span>
+            <span class="token string">"     class=\"photo-item\" rel=\"example_group\""</span> <span class="token operator">+</span>
+            <span class="token string">"     data-fancybox=\"images\">"</span> <span class="token operator">+</span>
+            <span class="token string">"      &lt;img src=\"http://imgs.liyangzone.com/gallery-tiny/"</span> <span class="token operator">+</span> photo <span class="token operator">+</span> <span class="token string">"\""</span> <span class="token operator">+</span>
+            <span class="token string">"       alt="</span> <span class="token operator">+</span> photo <span class="token operator">+</span> <span class="token string">">"</span> <span class="token operator">+</span>
+            <span class="token string">"    &lt;/a>"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>二是使用七牛自带的<code>图片样式</code>功能，该功能提供简单快捷的图片格式转换、缩略、剪裁功能。只需要填写几个参数，即可对图片进行缩略操作，生成各种缩略图。比如我建立了一个名为 <code>w33</code> 的图片样式，该样式的功能就是生成原图33%大小的缩略图。假如一个100×100的图片，在图片地址后面加上这个样式后就变成33×33大小的了。对应代码需改为：</p>
+<pre class="line-numbers language-js"><code class="language-js">
+ imageStr <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"&lt;a href=\"http://imgs.liyangzone.com/"</span> <span class="token operator">+</span> photo <span class="token operator">+</span> <span class="token string">"!w95\""</span> <span class="token operator">+</span>
+            <span class="token string">"     class=\"photo-item\" rel=\"example_group\""</span> <span class="token operator">+</span>
+            <span class="token string">"     data-fancybox=\"images\">"</span> <span class="token operator">+</span>
+            <span class="token string">"      &lt;img src=\"http://imgs.liyangzone.com/"</span> <span class="token operator">+</span> photo <span class="token operator">+</span> <span class="token string">"!w33\""</span> <span class="token operator">+</span>
+            <span class="token string">"       alt="</span> <span class="token operator">+</span> photo <span class="token operator">+</span> <span class="token string">">"</span> <span class="token operator">+</span>
+            <span class="token string">"    &lt;/a>"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>列表页使用33%大小的样式，查看大图使用95%大小的。上面的叹号是样式分隔符，七牛默认的分隔符有四个:</p>
+<pre class="line-numbers language-html"><code class="language-html">- _ ! /<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>也可以改成下面的：</p>
+<pre class="line-numbers language-html"><code class="language-html">~ ` @ $ ^ &amp; * ( ) + = { } [ ] | : ; " ' &lt; >
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>生成的图片地址是这样的,你可以复制到地址栏查看效果：</p>
+<pre class="line-numbers language-html"><code class="language-html">http://imgs.liyangzone.com/2017/IMG_20170508_163002.jpg!w33
+http://imgs.liyangzone.com/2017/IMG_20170508_163002.jpg!w75<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>另外建议开启七牛的原图保护功能并配置Referer防盗链，防止被恶意刷流量。</p>
+<p>我目前使用的是第一种方案，只是把缩略图放到腾讯CDN了，不想麻烦的可以使用第二种。</p>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/social-share.js/1.0.16/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="linkedin,facebook,twitter,google+,tencent,diandian" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<!--<script src="/libs/share/js/social-share.min.js"></script>-->
+<script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+    .v .vwrap .vheader .vinput:focus {
+        border-bottom:1px dashed #eb5055;!important;
+        box-shadow: none;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="https://cdn.staticfile.org/valine/1.3.9/Valine.min.js"></script>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'gE4XFMwC1Kq2wzKJNoHlmaYS-gzGzoHsz',
+        appKey: 'rrtA6uiEs1IdVW4qRLzEmTfB',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '欢迎留言\n评论功能以邮件作为通知方式\n如有必要请填写正确邮箱'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/07/30/使用AES算法加密Hexo相册/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="http://images.liyangzone.com/medias/featureimages/19040000589_2696c93a9e_k.jpg" class="responsive-img" alt="使用AES算法加密Hexo相册">
+                        
+                        <span class="card-title">使用AES算法加密Hexo相册</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本教程承接上篇Hexo博客添加一级分类相册。
+在上篇教程中，我们已经实现了hexo的分类相册功能。然后我发现那个大佬的相册竟然还有加密的功能（点击进入大佬的相册），在大佬的这篇教程下面，还有一个参考资料：使用AES算法加密hexo文章，可惜
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术教程/" class="post-category" target="_blank">
+                                    技术教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/" target="_blank">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/相册/" target="_blank">
+                        <span class="chip bg-color">相册</span>
+                    </a>
+                    
+                    <a href="/tags/加密/" target="_blank">
+                        <span class="chip bg-color">加密</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/20/前端/JavaScript之再学习/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="http://images.liyangzone.com/medias/featureimages/5733685713_c93ac9410b_b.jpg" class="responsive-img" alt="JavaScript之再学习">
+                        
+                        <span class="card-title">JavaScript之再学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            概览JavaScript 是一种面向对象的动态语言，它包含类型、运算符、标准内置（ built-in）对象和方法。它的语法来源于 Java 和 C，所以这两种语言的许多语法特性同样适用于 JavaScript。需要注意的一个主要区别是 Ja
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web前端/" class="post-category" target="_blank">
+                                    web前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+
+<footer class="page-footer foot-bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="javascript:;" target="_blank"> 星空无限 </a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">29.1k</span>
+            
+
+            
+			
+
+            <div>
+                <a href="http://beian.miit.gov.cn">豫ICP备19028870号</a>
+            </div>
+            
+                <div style="display: none;">
+                    <script src="//s96.cnzz.com/z_stat.php?id=1277838830&web_id=1277838830"></script>
+                </div>
+            
+
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/liyang5945" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:liyang9211@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=594443507" class="tooltipped" data-tooltip="QQ联系我: 594443507" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+<script src="/js/search.js"></script>
+
+<!--<script src="/js/search.js"></script>-->
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.staticfile.org/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="https://cdn.staticfile.org/masonry/4.0.0/masonry.pkgd.js"></script>
+<script src="https://cdn.staticfile.org/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.staticfile.org/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+<script src="https://cdn.staticfile.org/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<!--<script src="/js/matery.js"></script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+
+</body>
+</html>

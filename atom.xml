@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>星空无限</title>
+  
+  <subtitle>千里之行，始于轮下</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-08-28T14:54:26.475Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>liyang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人常用软件推荐</title>
+    <link href="http://yoursite.com/2019/08/28/%E4%B8%AA%E4%BA%BA%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    <id>http://yoursite.com/2019/08/28/个人常用软件推荐/</id>
+    <published>2019-08-28T09:45:30.000Z</published>
+    <updated>2019-08-28T14:54:26.475Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;windows企业长期服务版&quot;&gt;&lt;a href=&quot;#windows企业长期服务版&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件分享" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="windows" scheme="http://yoursite.com/tags/windows/"/>
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>青海湖骑行记</title>
+    <link href="http://yoursite.com/2019/08/22/%E9%9D%92%E6%B5%B7%E6%B9%96%E9%AA%91%E8%A1%8C%E8%AE%B0/"/>
+    <id>http://yoursite.com/2019/08/22/青海湖骑行记/</id>
+    <published>2019-08-22T02:30:00.000Z</published>
+    <updated>2019-08-28T08:11:55.766Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;青海湖，也就是青色的海，是由蒙语“库库淖尔”和藏语“错温布”意译而来，是中国最大的湖泊，也是著名的内陆咸水湖。&lt;/p&gt;
+&lt;p&gt;青海湖，湖面海拔3196米，位于青海湖盆地内，三面环山；其中，北面、东南面、南面分别环绕祁连山脉、日月山脉、南山山脉。不仅有丰富的高原风景，又集草原
+        
+      
+    
+    </summary>
+    
+      <category term="生活记录" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="骑行" scheme="http://yoursite.com/tags/%E9%AA%91%E8%A1%8C/"/>
+    
+      <category term="游记" scheme="http://yoursite.com/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用AES算法加密Hexo相册</title>
+    <link href="http://yoursite.com/2019/07/30/%E4%BD%BF%E7%94%A8AES%E7%AE%97%E6%B3%95%E5%8A%A0%E5%AF%86Hexo%E7%9B%B8%E5%86%8C/"/>
+    <id>http://yoursite.com/2019/07/30/使用AES算法加密Hexo相册/</id>
+    <published>2019-07-30T03:30:00.000Z</published>
+    <updated>2019-08-28T01:58:38.611Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本教程承接上篇&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="相册" scheme="http://yoursite.com/tags/%E7%9B%B8%E5%86%8C/"/>
+    
+      <category term="加密" scheme="http://yoursite.com/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客添加一级分类相册功能</title>
+    <link href="http://yoursite.com/2019/07/22/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB%E7%9B%B8%E5%86%8C/"/>
+    <id>http://yoursite.com/2019/07/22/hexo博客添加一级分类相册/</id>
+    <published>2019-07-22T02:43:47.000Z</published>
+    <updated>2019-08-28T14:50:43.970Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在折腾自己的博客，在折腾的过程中也参观了许多大牛的博客，发现不少博主都有个相册页面，我也想在自己的博客上面加个相册功能。但是我现在用的这个主题呢，虽然有个相册的功能，但是我感觉有点简陋，点击照片是个弹出的轮播图，照片多了的话还要一张一张的翻。如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://liyangzone.com/article_img/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E6%95%99%E7%A8%8B/2019-07-22-01.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="添加相册" scheme="http://yoursite.com/tags/%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C/"/>
+    
+      <category term="分类相册" scheme="http://yoursite.com/tags/%E5%88%86%E7%B1%BB%E7%9B%B8%E5%86%8C/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript之再学习</title>
+    <link href="http://yoursite.com/2019/07/20/%E5%89%8D%E7%AB%AF/JavaScript%E4%B9%8B%E5%86%8D%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2019/07/20/前端/JavaScript之再学习/</id>
+    <published>2019-07-20T07:15:00.000Z</published>
+    <updated>2019-08-28T09:41:54.149Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;&lt;p&gt;JavaScript 是一种面向对象的动态语言，它包含类型、运算符、标准内置（ built-in）对象和方法。它的语法来源于 Java 和 C，所以这两种语言的许多语法特性同样适用于 JavaScript。需要注意的一个主要区别是 JavaScript 不支持类，类这一概念在 JavaScript 通过对象原型（object prototype）得到延续。另一个主要区别是 JavaScript 中的函数也是对象，JavaScript 允许函数在包含可执行代码的同时，能像其他对象一样被传递。&lt;/p&gt;
+&lt;h2 id=&quot;数据类型和结构&quot;&gt;&lt;a href=&quot;#数据类型和结构&quot; class=&quot;headerlink&quot; title=&quot;数据类型和结构&quot;&gt;&lt;/a&gt;数据类型和结构&lt;/h2&gt;&lt;h3 id=&quot;1-动态类型&quot;&gt;&lt;a href=&quot;#1-动态类型&quot; class=&quot;headerlink&quot; title=&quot;1. 动态类型&quot;&gt;&lt;/a&gt;1. 动态类型&lt;/h3&gt;&lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt;是一种弱类型或者说动态语言。这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。这也意味着你可以使用同一个变量保存不同类型的数据：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var foo = 42;    // foo is a Number now
+var foo = &amp;quot;bar&amp;quot;; // foo is a String now
+var foo = true;  // foo is a Boolean now&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;2-数据类型&quot;&gt;&lt;a href=&quot;#2-数据类型&quot; class=&quot;headerlink&quot; title=&quot;2. 数据类型&quot;&gt;&lt;/a&gt;2. 数据类型&lt;/h3&gt;&lt;p&gt;最新的&lt;code&gt;ECMAScript&lt;/code&gt;标准定义了 7 种数据类型:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;6 种原始类型&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Null&lt;/code&gt; (空, 只有一个值&lt;code&gt;null&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Undefined&lt;/code&gt; (未定义, 一个没有被赋值的变量的默认值是&lt;code&gt;undefined&lt;/code&gt;):&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Boolean&lt;/code&gt; (布尔, 可以有两个值：&lt;code&gt;true&lt;/code&gt; 和 &lt;code&gt;false&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Number&lt;/code&gt; (数字)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;String&lt;/code&gt; (字符串)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Symbol&lt;/code&gt; (符号, ECMAScript 6 新定义的类型，表示独一无二的值)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;和 &lt;code&gt;Object&lt;/code&gt; (对象)&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Function&lt;/code&gt; (函数)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Array&lt;/code&gt; (数组)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Date&lt;/code&gt; (日期)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JSON&lt;/code&gt; (JS对象标识,来序列化对象、数组、数值、字符串、布尔值和 &lt;code&gt;null&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Math&lt;/code&gt; (数学方面的计算)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RegExp&lt;/code&gt; (正则表达式)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Error&lt;/code&gt; (错误)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Map&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Set&lt;/code&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript基础教程</title>
+    <link href="http://yoursite.com/2019/07/20/%E5%89%8D%E7%AB%AF/JavaScript%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/07/20/前端/JavaScript基础教程/</id>
+    <published>2019-07-20T07:12:00.000Z</published>
+    <updated>2019-08-28T09:41:46.318Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、JavaScript介绍&quot;&gt;&lt;a href=&quot;#一、JavaScript介绍&quot; class=&quot;headerlink&quot; title=&quot;一、JavaScript介绍&quot;&gt;&lt;/a&gt;一、JavaScript介绍&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JavaScript&lt;/a&gt;是目前所有主流浏览器上唯一支持的脚本语言，这也是早期&lt;code&gt;JavaScript&lt;/code&gt;的唯一用途。其主要作用是在不与服务器交互的情况下修改&lt;code&gt;HTML&lt;/code&gt;页面内容，因此其最关键的部分是&lt;code&gt;DOM&lt;/code&gt;（文档对象模型），也就是&lt;code&gt;HTML&lt;/code&gt;元素的结构。通过&lt;code&gt;Ajax&lt;/code&gt;可以使&lt;code&gt;HTML&lt;/code&gt;页面通过&lt;code&gt;JavaScript&lt;/code&gt;，在不重新加载页面的情况下从服务器上获取数据并显示，大幅提高用户体验。通过&lt;code&gt;JavaScript&lt;/code&gt;，使&lt;code&gt;Web&lt;/code&gt;页面发展成胖客户端成为可能。&lt;/p&gt;
+&lt;h3 id=&quot;语言的性质&quot;&gt;&lt;a href=&quot;#语言的性质&quot; class=&quot;headerlink&quot; title=&quot;语言的性质&quot;&gt;&lt;/a&gt;语言的性质&lt;/h3&gt;&lt;p&gt;本节对&lt;code&gt;JavaScript&lt;/code&gt;的性质做简要介绍，以帮你理解一些疑问。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt;和&lt;code&gt;ECMAScript&lt;/code&gt;（JavaScript versus ECMAScript）&lt;br&gt;编程语言称为&lt;code&gt;JavaScript&lt;/code&gt;，语言标准被称为&lt;code&gt;ECMAScript&lt;/code&gt;。他们有不同名字的原因是因为“Java”已经被注册为商标（属于Oracle）。目前，只有&lt;code&gt;Mozilla&lt;/code&gt;被正式允许使用“JavaScript”名称，因为很久以前他们得到一份许可。因此，开放的语言标准拥有不同的名字。当前的&lt;code&gt;JavaScript&lt;/code&gt;版本是&lt;code&gt;ECMAScript 6&lt;/code&gt;，&lt;code&gt;ECMAScript 7&lt;/code&gt;当前是开发版。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt;之父，&lt;code&gt;Brendan Eich&lt;/code&gt;&lt;a href=&quot;http://yanhaijing.com/javascript/2013/06/22/javascript-designing-a-language-in-10-days/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;迅速了创建一门编程语言&lt;/a&gt;。（否则，Netscape将使用其他技术）。他借鉴了几门其他语言的一些特性：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown使用指南</title>
+    <link href="http://yoursite.com/2019/07/17/markdown%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2019/07/17/markdown使用指南/</id>
+    <published>2019-07-17T14:45:30.000Z</published>
+    <updated>2019-07-31T03:43:49.928Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-Markdown是什么？&quot;&gt;&lt;a href=&quot;#1-Markdown是什么？&quot; class=&quot;headerlink&quot; title=&quot;1. Markdown是什么？&quot;&gt;&lt;/a&gt;1. Markdown&lt;em&gt;是什么&lt;/em&gt;？&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Markdown&lt;/strong&gt;是一种轻量级&lt;strong&gt;标记语言&lt;/strong&gt;，它以纯文本形式(&lt;em&gt;易读、易写、易更改&lt;/em&gt;)编写文档，并最终以HTML格式发布。&lt;br&gt;&lt;strong&gt;Markdown&lt;/strong&gt;也可以理解为将以MARKDOWN语法编写的语言转换成HTML内容的工具。    &lt;/p&gt;
+&lt;h3 id=&quot;2-谁创造了它？&quot;&gt;&lt;a href=&quot;#2-谁创造了它？&quot; class=&quot;headerlink&quot; title=&quot;2. 谁创造了它？&quot;&gt;&lt;/a&gt;2. &lt;em&gt;谁&lt;/em&gt;创造了它？&lt;/h3&gt;&lt;p&gt;它由&lt;a href=&quot;http://www.aaronsw.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;Aaron Swartz&lt;/strong&gt;&lt;/a&gt;和&lt;strong&gt;John Gruber&lt;/strong&gt;共同设计，&lt;strong&gt;Aaron Swartz&lt;/strong&gt;是一位有着&lt;strong&gt;开挂&lt;/strong&gt;一般人生经历的程序员。维基百科对他的&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;介绍&lt;/a&gt;是：&lt;strong&gt;软件工程师、作家、政治组织者、互联网活动家、维基百科人&lt;/strong&gt;。    &lt;/p&gt;
+&lt;p&gt;他有着足以让你跪拜的人生经历：    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;14岁&lt;/strong&gt;参与RSS 1.0规格标准的制订。     &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2004&lt;/strong&gt;年入读&lt;strong&gt;斯坦福&lt;/strong&gt;，之后退学。   &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2005&lt;/strong&gt;年创建&lt;a href=&quot;http://infogami.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Infogami&lt;/a&gt;，之后与&lt;a href=&quot;http://www.reddit.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Reddit&lt;/a&gt;合并成为其合伙人。   &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2010&lt;/strong&gt;年创立求进会（Demand Progress），积极参与禁止网络盗版法案（SOPA）活动，最终该提案被撤回。   &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2011&lt;/strong&gt;年7月19日，因被控从MIT和JSTOR下载480万篇学术论文并以免费形式上传于网络被捕。     &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2013&lt;/strong&gt;年1月自杀身亡。
+    
+    </summary>
+    
+      <category term="技术指南" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97/"/>
+    
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello，world！</title>
+    <link href="http://yoursite.com/2019/07/15/hello-world/"/>
+    <id>http://yoursite.com/2019/07/15/hello-world/</id>
+    <published>2019-07-15T09:25:30.000Z</published>
+    <updated>2019-08-28T07:35:20.630Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;hello
+        
+      
+    
+    </summary>
+    
+      <category term="日志" scheme="http://yoursite.com/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="hello world" scheme="http://yoursite.com/tags/hello-world/"/>
+    
+  </entry>
+  
+</feed>
